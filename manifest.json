@@ -1,6 +1,6 @@
 {
-  "name": "Kalkulačka dosiek",
-  "short_name": "Dosky",
+  "name": "Kalkulačka dreva",
+  "short_name": "Drevo",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f3f4f6",

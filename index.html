@@ -3,85 +3,95 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kalkulačka dosiek</title>
+  <title>Kalkulačka dreva</title>
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="style.css">
   <meta name="theme-color" content="#1f2937">
 </head>
 <body>
-  <main class="app">
-    <section class="card">
-      <h1>Kalkulačka dosiek</h1>
-      <p class="subtitle">Výpočet ceny kusov podľa objemu v m³</p>
+<main class="app">
+  <section class="card">
+    <h1>Kalkulačka dreva</h1>
+    <p class="subtitle">Vyber typ výpočtu</p>
 
-      <label>Dĺžka dosky</label>
-      <div class="row">
-        <input id="dlzka" type="number" step="0.001" placeholder="napr. 4">
-        <select id="dlzkaJednotka">
-          <option value="m">m</option>
-          <option value="cm">cm</option>
-          <option value="mm">mm</option>
-        </select>
-      </div>
+    <div class="tabs">
+      <button class="tab active" id="tabSkarovky">Škárovky</button>
+      <button class="tab" id="tabProfil">Tatranský profil</button>
+    </div>
 
-      <label>Šírka dosky</label>
-      <div class="row">
-        <input id="sirka" type="number" step="0.001" placeholder="napr. 15">
-        <select id="sirkaJednotka">
-          <option value="cm" selected>cm</option>
-          <option value="m">m</option>
-          <option value="mm">mm</option>
-        </select>
-      </div>
+    <section id="skarovkyPanel">
+      <h2>Škárovky</h2>
 
-      <label>Hrúbka dosky</label>
-      <div class="row">
-        <input id="hrubka" type="number" step="0.001" placeholder="napr. 25">
-        <select id="hrubkaJednotka">
-          <option value="mm" selected>mm</option>
-          <option value="cm">cm</option>
-          <option value="m">m</option>
-        </select>
-      </div>
+      <label>Dĺžka (mm)</label>
+      <input id="skDlzka" type="number" placeholder="napr. 4000">
+
+      <label>Šírka (mm)</label>
+      <input id="skSirka" type="number" placeholder="napr. 150">
+
+      <label>Hrúbka (mm)</label>
+      <input id="skHrubka" type="number" placeholder="napr. 25">
 
       <label>Počet kusov</label>
-      <input id="pocet" type="number" step="1" placeholder="napr. 10">
+      <input id="skPocet" type="number" placeholder="napr. 10">
 
-      <label>Cena za 1 m³ (€)</label>
-      <input id="cenaM3" type="number" step="0.01" placeholder="napr. 300">
+      <label>Cena za 1 kus (€)</label>
+      <input id="skCenaKs" type="number" step="0.01" placeholder="napr. 4.50">
 
-      <button id="vypocitat">Vypočítať</button>
+      <button id="vypocitatSkarovky" class="primary">Vypočítať</button>
 
       <section class="results">
-        <h2>Výsledok do eKasy</h2>
-        <div class="result-line">
-          <span>Množstvo:</span>
-          <strong id="ekasaMnozstvo">–</strong>
-        </div>
+        <h3>Výsledok do eKasy</h3>
+
         <div class="result-line highlight">
-          <span>Cena za 1 ks:</span>
-          <strong id="ekasaCenaKs">–</strong>
-        </div>
-        <div class="result-line">
-          <span>Celkom:</span>
-          <strong id="celkom">–</strong>
+          <span>Celkové kubíky:</span>
+          <strong id="skKubiky">–</strong>
         </div>
 
-        <h2>Kontrolné údaje</h2>
-        <div class="result-line">
-          <span>Objem 1 ks:</span>
-          <strong id="objemKs">–</strong>
-        </div>
-        <div class="result-line">
-          <span>Celkový objem:</span>
-          <strong id="objemSpolu">–</strong>
+        <div class="result-line highlight">
+          <span>Cena za 1 m³:</span>
+          <strong id="skCenaM3">–</strong>
         </div>
       </section>
-
-      <p class="note">Tip: Appku otvor v mobile a daj „Pridať na plochu“.</p>
     </section>
-  </main>
 
-  <script src="app.js"></script>
+    <section id="profilPanel" class="hidden">
+      <h2>Tatranský profil</h2>
+
+      <label>Dĺžka (mm)</label>
+      <input id="tpDlzka" type="number" placeholder="napr. 4000">
+
+      <label>Šírka (mm)</label>
+      <input id="tpSirka" type="number" placeholder="napr. 120">
+
+      <label>Cena za 1 m² (€)</label>
+      <input id="tpCenaM2" type="number" step="0.01" placeholder="napr. 12.50">
+
+      <label>Počet kusov</label>
+      <input id="tpPocet" type="number" placeholder="napr. 20">
+
+      <button id="vypocitatProfil" class="primary">Vypočítať</button>
+
+      <section class="results">
+        <h3>Výsledok</h3>
+
+        <div class="result-line">
+          <span>Plocha 1 ks:</span>
+          <strong id="tpPlochaKs">–</strong>
+        </div>
+
+        <div class="result-line highlight">
+          <span>Cena za 1 ks:</span>
+          <strong id="tpCenaKs">–</strong>
+        </div>
+
+        <div class="result-line highlight">
+          <span>Celková cena:</span>
+          <strong id="tpCenaSpolu">–</strong>
+        </div>
+      </section>
+    </section>
+  </section>
+</main>
+<script src="app.js"></script>
 </body>
 </html>
