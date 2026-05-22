@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalkulačka dosiek</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#1f2937">
+</head>
+<body>
+  <main class="app">
+    <section class="card">
+      <h1>Kalkulačka dosiek</h1>
+      <p class="subtitle">Výpočet ceny kusov podľa objemu v m³</p>
+
+      <label>Dĺžka dosky</label>
+      <div class="row">
+        <input id="dlzka" type="number" step="0.001" placeholder="napr. 4">
+        <select id="dlzkaJednotka">
+          <option value="m">m</option>
+          <option value="cm">cm</option>
+          <option value="mm">mm</option>
+        </select>
+      </div>
+
+      <label>Šírka dosky</label>
+      <div class="row">
+        <input id="sirka" type="number" step="0.001" placeholder="napr. 15">
+        <select id="sirkaJednotka">
+          <option value="cm" selected>cm</option>
+          <option value="m">m</option>
+          <option value="mm">mm</option>
+        </select>
+      </div>
+
+      <label>Hrúbka dosky</label>
+      <div class="row">
+        <input id="hrubka" type="number" step="0.001" placeholder="napr. 25">
+        <select id="hrubkaJednotka">
+          <option value="mm" selected>mm</option>
+          <option value="cm">cm</option>
+          <option value="m">m</option>
+        </select>
+      </div>
+
+      <label>Počet kusov</label>
+      <input id="pocet" type="number" step="1" placeholder="napr. 10">
+
+      <label>Cena za 1 m³ (€)</label>
+      <input id="cenaM3" type="number" step="0.01" placeholder="napr. 300">
+
+      <button id="vypocitat">Vypočítať</button>
+
+      <section class="results">
+        <h2>Výsledok do eKasy</h2>
+        <div class="result-line">
+          <span>Množstvo:</span>
+          <strong id="ekasaMnozstvo">–</strong>
+        </div>
+        <div class="result-line highlight">
+          <span>Cena za 1 ks:</span>
+          <strong id="ekasaCenaKs">–</strong>
+        </div>
+        <div class="result-line">
+          <span>Celkom:</span>
+          <strong id="celkom">–</strong>
+        </div>
+
+        <h2>Kontrolné údaje</h2>
+        <div class="result-line">
+          <span>Objem 1 ks:</span>
+          <strong id="objemKs">–</strong>
+        </div>
+        <div class="result-line">
+          <span>Celkový objem:</span>
+          <strong id="objemSpolu">–</strong>
+        </div>
+      </section>
+
+      <p class="note">Tip: Appku otvor v mobile a daj „Pridať na plochu“.</p>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

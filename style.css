@@ -1,0 +1,100 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f3f4f6;
+  color: #111827;
+}
+
+.app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 18px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin-top: 6px;
+  color: #6b7280;
+}
+
+label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input, select, button {
+  width: 100%;
+  font-size: 18px;
+  padding: 13px;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  gap: 8px;
+}
+
+button {
+  margin-top: 22px;
+  border: none;
+  background: #1f2937;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(0.99);
+}
+
+.results {
+  margin-top: 24px;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 16px;
+}
+
+h2 {
+  font-size: 18px;
+  margin: 16px 0 10px;
+}
+
+.result-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.result-line strong {
+  text-align: right;
+}
+
+.highlight {
+  font-size: 20px;
+}
+
+.note {
+  margin-top: 18px;
+  color: #6b7280;
+  font-size: 14px;
+}
